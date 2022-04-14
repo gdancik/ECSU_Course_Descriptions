@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+  <body>
+  
+    <div style = "margin-left:5%; margin-right:5%">
+      
+      <input id = 'subj' type = 'text' value = 'CSC'> <button onclick = 'update();'> Select </button> </br></br>
+      
+    <iframe id = 'catalog' width = '100%';' style = "height:100vh";>  
+    </iframe>
+  
+  <script>
+  function update() {
+    let myframe = document.getElementById('catalog');
+    let subj = document.getElementById('subj').value;
+                                             
+    if (subj.length != 3) {
+          alert('Invalid subject');
+                                 return
+    }
+                                               
+    myframe.src = 'https://ssb-prod.ec.easternct.edu/PROD/bwckctlg.p_display_courses?term_in=999999&one_subj=' + subj + 
+      '&sel_subj=&sel_crse_strt=&sel_crse_end=&sel_title=&sel_levl=&sel_schd=&sel_coll=&sel_divs=&sel_dept=&sel_from_cred=&sel_to_cred=&sel_attr=';
+  }
+  
+    update();
+    
+  </script>
+  </div>
+    
+  </body>
+</html>
