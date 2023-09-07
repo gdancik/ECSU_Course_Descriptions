@@ -5,12 +5,28 @@
   
     <div style = "margin-left:5%; margin-right:5%">
       
-      <input id = 'subj' type = 'text' value = 'CSC'> <button onclick = 'update();'> Select </button> </br></br>
+      <input id = 'subj' type = 'text' value = 'CSC'> <button id = "myBtn" onclick = 'update();'> Select </button> </br></br>
       
     <iframe id = 'catalog' width = '100%';' style = "height:100vh";>  
     </iframe>
   
   <script>
+
+
+// Get the input field
+var input = document.getElementById("subj");
+
+// Execute a function when the user presses a key on the keyboard
+input.addEventListener("keypress", function(event) {
+  // If the user presses the "Enter" key on the keyboard
+  if (event.key === "Enter") {
+    // Cancel the default action, if needed
+    event.preventDefault();
+    // Trigger the button element with a click
+    document.getElementById("myBtn").click();
+  }
+}); 
+   
   function update() {
     let myframe = document.getElementById('catalog');
     let subj = document.getElementById('subj').value;
